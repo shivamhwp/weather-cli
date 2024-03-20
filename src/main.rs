@@ -82,6 +82,6 @@ async fn main() -> Result<(), ExitFailure>{
     let response = Forcast::get(&args.city, &args.country_code).await?;
 
 
-    println!(" city: {}, country code :{}, humidity : {}%", args.city, args.country_code, response.main.humidity);
+    println!(" city: {}\n country code :{}\n humidity : {}%\n windspeed : {}km/h\n description: {}\n  ", args.city, args.country_code , response.main.humidity, response.wind.speed, response.weather.details.main  );
     Ok(())
 }
